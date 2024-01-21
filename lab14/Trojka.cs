@@ -40,7 +40,7 @@ namespace lab14
 
         public override string ToString()
         {
-            return $"({a}, {b}, {c})";
+            return $"({this[0]}, {b}, {c})";
         }
 
         public string GetSortedString()
@@ -52,7 +52,13 @@ namespace lab14
         {
             get
             {
-                return values[index];             
+                switch (index)
+                {
+                    case 0: return a;
+                    case 1: return b;
+                    case 2: return c;
+                    default: throw new IndexOutOfRangeException("Index out of range.");
+                }
             }
         }
 
